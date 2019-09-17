@@ -31,13 +31,11 @@ object LiveDataBus {
         }
     }
 
-    fun unregister(subject: String) {
-        subjectMap.remove(subject)
-    }
+    fun unregister(subject: String) = subjectMap.remove(subject)
 
-    fun publish(subject: String, message: ConsumableEvent = ConsumableEvent()) {
+    fun unregisterAll() = subjectMap.clear()
+
+    fun publish(subject: String, message: ConsumableEvent = ConsumableEvent()) =
         getLiveData(subject).update(message)
-    }
-
 
 }
