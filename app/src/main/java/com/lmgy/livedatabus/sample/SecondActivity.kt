@@ -14,7 +14,7 @@ class SecondActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
 
-        LiveDataBus.with(StringEvent::class.java).observe(this, Observer {
+        LiveDataBus.with(Event::class.java).observe(this, Observer {
             if (it.id == 1) {
                 e("LiveDataBus", "Second" + it.message + System.currentTimeMillis())
                 Toast.makeText(this, it.message + System.currentTimeMillis(), Toast.LENGTH_LONG)
@@ -23,7 +23,7 @@ class SecondActivity : AppCompatActivity() {
         }, true)
 
         button.setOnClickListener {
-            LiveDataBus.with(StringEvent::class.java).post(StringEvent("return", 2))
+            LiveDataBus.with(Event::class.java).post(Event("return", 2))
             finish()
         }
     }
