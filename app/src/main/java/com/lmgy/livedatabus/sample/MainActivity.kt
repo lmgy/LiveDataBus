@@ -16,11 +16,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            LiveDataBus.with(StringEvent::class.java).setValueSticky(StringEvent("hello", 1))
+            LiveDataBus.with(Event::class.java).post(Event("post", 1))
+        }
+
+        buttonSticky.setOnClickListener {
+            LiveDataBus.with(Event::class.java).postSticky(Event("postSticky", 1))
+        }
+
+        buttonStart.setOnClickListener {
             startActivity(Intent(this, SecondActivity::class.java))
         }
 
-        LiveDataBus.with(StringEvent::class.java).observe(this, Observer {
+        LiveDataBus.with(Event::class.java).observe(this, Observer {
             if (it.id == 2) {
                 e("LiveDataBus", "Main" + it.message + System.currentTimeMillis())
                 Toast.makeText(this, it.message + System.currentTimeMillis(), Toast.LENGTH_LONG)
