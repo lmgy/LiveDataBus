@@ -16,8 +16,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            LiveDataBus.with(Event::class.java).setValueSticky(Event("hello", 1))
-
+            LiveDataBus.with(Event::class.java).post(Event("post", 1))
         }
 
         buttonSticky.setOnClickListener {
