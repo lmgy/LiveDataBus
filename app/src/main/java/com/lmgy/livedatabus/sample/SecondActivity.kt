@@ -23,9 +23,16 @@ class SecondActivity : AppCompatActivity() {
         }, true)
 
         button.setOnClickListener {
+
             LiveDataBus.with(Event::class.java).post(Event("return", 2))
+
             finish()
         }
+
+        buttonDelete.setOnClickListener {
+            LiveDataBus.with(Event::class.java).removeSticky()
+        }
+
     }
 
 }

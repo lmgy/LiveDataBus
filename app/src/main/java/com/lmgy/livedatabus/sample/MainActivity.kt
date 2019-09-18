@@ -17,6 +17,14 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             LiveDataBus.with(Event::class.java).setValueSticky(Event("hello", 1))
+
+        }
+
+        buttonSticky.setOnClickListener {
+            LiveDataBus.with(Event::class.java).postSticky(Event("postSticky", 1))
+        }
+
+        buttonStart.setOnClickListener {
             startActivity(Intent(this, SecondActivity::class.java))
         }
 

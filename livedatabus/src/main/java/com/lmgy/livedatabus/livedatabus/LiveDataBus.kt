@@ -1,6 +1,5 @@
 package com.lmgy.livedatabus.livedatabus
 
-import android.os.Looper
 import java.util.concurrent.ConcurrentHashMap
 
 /**
