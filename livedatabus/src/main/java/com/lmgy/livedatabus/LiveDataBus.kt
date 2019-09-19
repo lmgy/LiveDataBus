@@ -1,4 +1,4 @@
-package com.lmgy.livedatabus.livedatabus
+package com.lmgy.livedatabus
 
 import java.util.concurrent.ConcurrentHashMap
 

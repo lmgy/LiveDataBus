@@ -1,7 +1,6 @@
-package com.lmgy.livedatabus.livedatabus
+package com.lmgy.livedatabus
 
 import android.os.Looper
-import android.util.Log.e
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
