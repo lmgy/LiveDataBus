@@ -5,7 +5,6 @@ import android.util.Log.e
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import com.lmgy.livedatabus.LiveDataBus
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecondActivity : AppCompatActivity() {
