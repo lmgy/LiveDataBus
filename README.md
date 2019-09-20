@@ -1,10 +1,30 @@
-# LiveDataBusSample
+# LiveDataBus
 
 [![](https://jitpack.io/v/lmgy/LiveDataBus.svg)](https://jitpack.io/#lmgy/LiveDataBus)
 [![API](https://img.shields.io/badge/API-16%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=16)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9e4d6ec4b13e4419912b3e6cfa4932c1)](https://www.codacy.com/manual/lmgy/LiveDataBus?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lmgy/LiveDataBus&amp;utm_campaign=Badge_Grade)
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Flmgy%2FLiveDataBus.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Flmgy%2FLiveDataBus?ref=badge_shield)
 
+## Install
+
+Step 1. Add the JitPack repository to your build file
+
+``` groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+
+``` groovy
+dependencies {
+	implementation 'com.github.lmgy:LiveDataBus:1.0.0'
+}
+```
 
 ## How to use
 
@@ -26,27 +46,6 @@ LiveDataBus.with(Event::class.java).post(Event("post"))
 
 ``` kotlin
 LiveDataBus.with(Event::class.java).postSticky(Event("postSticky"))
-```
-
-## Install
-
-Step 1. Add the JitPack repository to your build file
-
-``` groovy
-allprojects {
-    repositories {
-        ...
-        maven { url 'https://jitpack.io' }
-    }
-}
-```
-
-Step 2. Add the dependency
-
-``` groovy
-dependencies {
-	implementation 'com.github.lmgy:LiveDataBus:1.0.0'
-}
 ```
 
 ## Requirements
