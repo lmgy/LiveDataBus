@@ -1,14 +1,14 @@
 # LiveDataBusSample
 
+[![](https://jitpack.io/v/lmgy/LiveDataBus.svg)](https://jitpack.io/#lmgy/LiveDataBus)
+
 ## How to use
 
 - Subscribe
 
 ``` kotlin
 LiveDataBus.with(Event::class.java).observe(this, Observer {
-
     Toast.makeText(this, it.message + System.currentTimeMillis(), Toast.LENGTH_LONG).show()
-
 })
 ```
 
@@ -22,7 +22,27 @@ LiveDataBus.with(Event::class.java).post(Event("post"))
 
 ``` kotlin
 LiveDataBus.with(Event::class.java).postSticky(Event("postSticky"))
+```
 
+## Install
+
+Step 1. Add the JitPack repository to your build file
+
+``` groovy
+allprojects {
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Step 2. Add the dependency
+
+``` groovy
+dependencies {
+	implementation 'com.github.lmgy:LiveDataBus:1.0.0'
+}
 ```
 
 ## Requirements
