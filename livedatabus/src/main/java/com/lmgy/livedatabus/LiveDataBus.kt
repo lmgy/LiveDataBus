@@ -6,7 +6,7 @@ import java.util.concurrent.ConcurrentHashMap
  * @author lmgy
  * @date 2019/9/17
  */
-class LiveDataBus private constructor(){
+object LiveDataBus{
 
     private val subjectMap = ConcurrentHashMap<Class<*>, LiveDataEvent<*>>()
 
@@ -15,15 +15,5 @@ class LiveDataBus private constructor(){
     }
 
     fun <T> with(clazz: Class<T>) = bus(clazz) as LiveDataEvent<T>
-
-    companion object {
-        @Volatile
-        private var instance: LiveDataBus? = null
-
-        @JvmStatic
-        fun getInstance() = instance ?: synchronized(this) {
-            instance ?: LiveDataBus().also { instance = it }
-        }
-    }
 
 }
